@@ -1,0 +1,43 @@
+/* style de la notification */
+.notification {
+  width: 527px;
+  height: 160px;
+  margin: 20px;
+  padding: 24px;
+  border-radius: 16px;
+  border: 2px solid;
+  display: flex;
+  align-items: flex-start; 
+  }
+
+  .close {
+    margin-left: auto;
+  }
+
+  .content {
+    margin-left: 16px;
+  }
+  
+
+  /* Chargement de différentes couleurs en fonctions du type de la notification */
+  .notification-warning {
+    background-color: #F7F2E4;
+    border-color: #D4C296;
+
+  }
+  
+  .notification-danger {
+    background-color: #F7E4E4; 
+    border-color: #D29393;
+  }
+  
+  .notification-success {
+    background-color: #E4F7E8; 
+    border-color: #89B291;
+  }
+  
+  .notification-info {
+    background-color: #E4E9F7; 
+    border-color: #96A8D8;
+  }
+  
