@@ -36,6 +36,10 @@ export default {
   },
   methods: {
     addNotification() {
+      // Si la taille de l'array est supérieur ou égal à 5, retire le premier élément de l'array
+      if (this.notifications.length >= 5) {
+        this.notifications.shift();
+      }
       // Ajoute une nouvelle notification à la liste
       this.notifications.push({
         title: 'Modal Warning',
