@@ -1,0 +1,19 @@
+.notifications-container {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+  }
+
+.add-button {
+    padding: 20px;
+    background-color: #1e5c9e;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.add-button:hover {
+    background-color: #0056b3;
+  }

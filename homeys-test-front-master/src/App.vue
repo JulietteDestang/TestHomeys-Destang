@@ -1,6 +1,14 @@
 <template>
   <div>
+
+    <!-- Boutton pour ajouter une notification -->
+    <button @click="addNotification" class="add-button">
+    <p>Add Notification</p>
+    </button>
+
+
     <!-- Affiche toutes les notifications de l'array 'notifications' -->
+    <div class="notifications-container">
     <BaseNotification
       v-for="(notification, index) in notifications"
       :key="index"
@@ -9,6 +17,7 @@
       :type="notification.type"
       @close="removeNotification(index)"
     />
+    </div>
   </div>
 </template>
 
@@ -22,18 +31,26 @@ export default {
   data() {
     return {
       // Array de notifications
-      notifications: [
-        { title: 'Warning', message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor', type: 'warning' },
-        { title: 'Success !', message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor', type: 'success' },
-        { title: 'Danger...', message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor', type: 'danger' },
-        { title: 'Info', message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor', type: 'info' },
-      ]
+      notifications: []
     };
   },
   methods: {
+    addNotification() {
+      // Ajoute une nouvelle notification à la liste
+      this.notifications.push({
+        title: 'Modal Warning',
+        message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor',
+        type: 'info'
+      });
+    },
     removeNotification(index) {
       this.notifications.splice(index, 1); // Retire la notification de l'array à l'index 'index'
     }
   }
 };
 </script>
+
+<!-- Ajout d'un css pour notre page -->
+<style scoped>
+@import './App.css';
+</style>
