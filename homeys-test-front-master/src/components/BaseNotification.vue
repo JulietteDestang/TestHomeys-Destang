@@ -6,7 +6,7 @@
     <h2>{{ title }}</h2>
     <p>{{ message }}</p>
   </div>
-    <img src="/icon/Cross.svg" alt="Description de l'image" class="close">
+    <img src="/icon/Cross.svg" alt="Description de l'image" class="close" @click="closeNotification">
   </div>
 </template>
 
@@ -31,7 +31,7 @@ export default {
       return `notification-${this.type}`;
     },
     iconSrc() {
-      // Map liant type de notification à l'icon associé
+      // Map liant type de notification à l'icon associée
       const iconMap = {
         danger: '/icon/Danger.svg',
         info: '/icon/Info.svg',
@@ -39,6 +39,12 @@ export default {
         warning: '/icon/Warning.svg'
       };
       return iconMap[this.type]
+    }
+  },
+  methods: {
+    // Envoie un event de type "close". L'event appelle ensuite la méthode permettant de supprimer la notification dans le composant parent.
+    closeNotification() {
+      this.$emit('close');
     }
   }
 }

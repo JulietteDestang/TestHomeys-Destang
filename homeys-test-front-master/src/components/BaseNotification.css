@@ -14,6 +14,12 @@
     margin-left: auto;
   }
 
+  /* Ajoute un effet de souris et éclairci le svg */
+  .close:hover {
+    cursor: pointer; 
+    filter: opacity(0.1);
+  }
+
   .content {
     margin-left: 16px;
   }
